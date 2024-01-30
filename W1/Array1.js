@@ -183,7 +183,7 @@ numArrays.forEach(function (arr) {
 // console.log("Exercise 15 Result:\n", total);
 
 //-------------------------------------------------------------------
-//Function Practice
+//Function Lab Practice
 
 // 1.(completed above) Define a function, as a function declaration,
 //maxOfTwoNumbers that takes two numbers as arguments and returns the largest of them. If they are the same, return that number. Use the if-else construct or a ternary expression - the Math.max method is not allowed.
