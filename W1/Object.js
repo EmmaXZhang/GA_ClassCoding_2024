@@ -41,10 +41,12 @@ const album3 = {
 // Exercise 3: Accessing the string 'LP' from album2's formats array, add it to the end of album3's formats array.
 let lp = album2.albumDetails.formats[0];
 album3.albumDetails.formats.push(lp);
-
 // console.log("Exercise 3:", album3.albumDetails.formats[1]);
 
 // Exercise 4:  Update the released property of album3 from a string into a Date object using that string
+
+album3.albumDetails.released = new Date("August 3, 1979");
+// console.log("Exercise 4:", album3.albumDetails.released.toLocaleDateString());
 
 const album4 = {
   title: "Remain in Light",
@@ -55,6 +57,8 @@ const album4 = {
 };
 
 // Exercise 5:  Add a property named label with the value 'Sire' to album4's albumDetails property
+album4.albumDetails.label = "Sire";
+// console.log("Exercise 5:", album4.albumDetails.label);
 
 const album5 = {
   title: "Little Creatures",
