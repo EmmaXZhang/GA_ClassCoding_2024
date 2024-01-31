@@ -84,7 +84,7 @@ const album6 = {
 
 // Exercise 7:  Assign album6's formats array to a variable named formats
 let formats = album6.albumDetails.formats;
-console.log("Exercise 7:", formats);
+// console.log("Exercise 7:", formats);
 
 const album7 = {
   title: "Naked",
@@ -106,6 +106,9 @@ const talkingHeadsAlbums = [
 ];
 
 // Exercise 8:  Using the talkingHeadsAlbums array, assign album5's labels property to a variable named labels
+
+let labels = talkingHeadsAlbums[4].albumDetails.labels;
+// console.log("Exercise 8:", labels);
 
 // Exercise 9:  Using the talkingHeadsAlbums array, assign album7's released property to album6's released property
 
