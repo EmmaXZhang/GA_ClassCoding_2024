@@ -70,6 +70,8 @@ const album5 = {
 };
 
 // Exercise 6:  Update the value 'emi' within album5's labels array to 'EMI'
+album5.albumDetails.labels[1] = "EMI";
+// console.log("Exercise 6:", album5.albumDetails.labels[1]);
 
 const album6 = {
   title: "True Stories",
@@ -81,6 +83,8 @@ const album6 = {
 };
 
 // Exercise 7:  Assign album6's formats array to a variable named formats
+let formats = album6.albumDetails.formats;
+console.log("Exercise 7:", formats);
 
 const album7 = {
   title: "Naked",
