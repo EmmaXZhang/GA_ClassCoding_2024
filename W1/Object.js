@@ -111,7 +111,17 @@ let labels = talkingHeadsAlbums[4].albumDetails.labels;
 // console.log("Exercise 8:", labels);
 
 // Exercise 9:  Using the talkingHeadsAlbums array, assign album7's released property to album6's released property
+let release = talkingHeadsAlbums[6].albumDetails.released;
+talkingHeadsAlbums[5].albumDetails.released = release;
+
+console.log(
+  "Exercise 9:",
+  talkingHeadsAlbums[5].albumDetails.released.toLocaleDateString()
+);
 
 // Exercise 10:  Using the pre-defined variable named albumIdx below, assign the albumDetails object of the album located within the talkingHeadsAlbums array at the index represented by the value of albumIdx to a variable named albumDetails
 
 let albumIdx = 4;
+
+let albumDetails = talkingHeadsAlbums[albumIdx].albumDetails;
+console.log("Exercise 10:", albumDetails);
