@@ -1,0 +1,56 @@
+* {
+  /* height & width now includes border & padding */
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Helvetica;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto auto auto;
+}
+
+.johnPhoto {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid lightgreen;
+}
+
+.flex-ctr {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  background-color: AntiqueWhite;
+}
+
+header {
+  display: flex;
+  flex-direction: row-reverse;
+  color: darkgray;
+  margin: 15px;
+}
+
+.phone {
+  background-color: lightgreen;
+}
+
+.chat {
+  background-color: limegreen;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: 3fr 3fr;
+  grid-template-rows: 100px;
+}
+
+.name {
+  font-family: sans-serif;
+  font-size: 30px;
+}
