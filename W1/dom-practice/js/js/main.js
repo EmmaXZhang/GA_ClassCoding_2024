@@ -10,3 +10,9 @@ pEl.style.color = "red";
 
 const linkEl = document.querySelector("a");
 linkEl.setAttribute("href", "https://www.google.com");
+
+const commentEls = document.querySelectorAll("#comments > li");
+
+for (let commentEl of commentEls) {
+  commentEl.style.fontSize = "30px";
+}
