@@ -1,15 +1,3 @@
-<body>
-<header>
-  <nav id="top-menu"></nav>
-</header>
-<main></main>
- 
-<script src="script.js"></script>
-</body>
-❗️ Note: The HTML is complete - DO NOT modify it in any way, do not add any classes, ids or anything.
-
-Add the following CSS within style.css:
-
 * {
   box-sizing: border-box;
 }
