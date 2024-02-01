@@ -22,3 +22,9 @@ for (let link of menuLinks) {
   linkEl.textContent = link.text;
   topMenuEl.appendChild(linkEl);
 }
+
+const subMenuEl = document.querySelector("#sub-menu");
+
+subMenuEl.style.height = "100%";
+subMenuEl.style.backgroundColor = "var(--sub-menu-bg)";
+subMenuEl.classList.add("flex-around");
