@@ -1,18 +1,24 @@
-const titleEl = document.getElementById("title");
-titleEl.style.textAlign = "center";
+const mainEl = document.querySelector("main");
+mainEl.style.backgroundColor = "var(--main-bg)";
+mainEl.innerHTML = "<h1>SEI Rocks!</h1>";
+mainEl.classList.add("flex-ctr");
 
-const pEl = document.querySelector(".cool");
+const topMenuEl = document.querySelector("#top-menu");
+topMenuEl.style.height = "100%";
+topMenuEl.style.backgroundColor = "var(--top-menu-bg)";
+topMenuEl.classList.add("flex-around");
 
-pEl.innerText = "Comment for Today";
-pEl.innerHTML = "comments for <strong>Today</strong>";
+// Menu data structure
+const menuLinks = [
+  { text: "about", href: "/about" },
+  { text: "catalog", href: "/catalog" },
+  { text: "orders", href: "/orders" },
+  { text: "account", href: "/account" },
+];
 
-pEl.style.color = "red";
-
-const linkEl = document.querySelector("a");
-linkEl.setAttribute("href", "https://www.google.com");
-
-const commentEls = document.querySelectorAll("#comments > li");
-
-for (let commentEl of commentEls) {
-  commentEl.style.fontSize = "30px";
+for (let link of menuLinks) {
+  const linkEl = document.createElement("a");
+  linkEl.setAttribute("href", link.href);
+  linkEl.textContent = link.text;
+  topMenuEl.appendChild(linkEl);
 }
