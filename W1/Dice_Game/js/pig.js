@@ -39,20 +39,32 @@ const elements = {
 /*----- event listeners -----*/
 //player1 roll dice
 elements.player1Roll.addEventListener("click", function () {
+  //exit function early (not going to run rollPair() function) if it is not our turn
+  if (state.player !== "player1") return;
   rollPair();
 });
 
 //player2 roll dice
 elements.player2Roll.addEventListener("click", function () {
+  if (state.player !== "player2") {
+    return;
+  }
   rollPair();
 });
 
 //player1 hold dice
 elements.player1Hold.addEventListener("click", function () {
+  if (state.player !== "player1") {
+    return;
+  }
+
   hold("player1");
 });
 //player2 hold dice
 elements.player2Hold.addEventListener("click", function () {
+  if (state.player !== "player2") {
+    return;
+  }
   hold("player2");
 });
 /*----- functions -----*/
