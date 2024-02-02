@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+  border: 1px solid limegreen;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+section {
+  min-height: 20vh;
+  font-size: 200%;
+  text-align: center;
+}
