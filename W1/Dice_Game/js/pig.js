@@ -1,6 +1,6 @@
 /*----- constants -----*/
 const SIDES = {
-  1: "&#x2680;",
+  1: "<span class='bacon'>&#x2680</span>;",
   2: "&#x2681;",
   3: "&#x2682;",
   4: "&#x2683;",
@@ -18,10 +18,12 @@ const state = {
   },
   points: 0,
   rolls: [],
+  winner: false,
 };
 /*----- cached elements  -----*/
 //object catch our frequently used dom nODES
 const elements = {
+  status: document.getElementById("status"),
   dice: document.getElementById("dice"),
   points: document.getElementById("points"),
   player1TotalPoints: document.querySelector(".player1 .totalPoints"),
@@ -40,13 +42,13 @@ const elements = {
 //player1 roll dice
 elements.player1Roll.addEventListener("click", function () {
   //exit function early (not going to run rollPair() function) if it is not our turn
-  if (state.player !== "player1") return;
+  if (state.winner || state.player !== "player1") return;
   rollPair();
 });
 
 //player2 roll dice
 elements.player2Roll.addEventListener("click", function () {
-  if (state.player !== "player2") {
+  if (state.winner || state.player !== "player2") {
     return;
   }
   rollPair();
@@ -54,7 +56,7 @@ elements.player2Roll.addEventListener("click", function () {
 
 //player1 hold dice
 elements.player1Hold.addEventListener("click", function () {
-  if (state.player !== "player1") {
+  if (state.winner || state.player !== "player1") {
     return;
   }
 
@@ -62,13 +64,14 @@ elements.player1Hold.addEventListener("click", function () {
 });
 //player2 hold dice
 elements.player2Hold.addEventListener("click", function () {
-  if (state.player !== "player2") {
+  if (state.winner || state.player !== "player2") {
     return;
   }
   hold("player2");
 });
 /*----- functions -----*/
 const init = function () {
+  state.winner = false;
   state.player = "player1";
   state.totalPoints.player1 = 0;
   state.totalPoints.player2 = 0;
@@ -78,6 +81,12 @@ const init = function () {
 };
 //a function is just a thing isnside a var
 const render = function () {
+  if (state.winner) {
+    elements.status.innerText = state.winner + "wins";
+  }
+  // else{
+  //     elements.status.
+  // }
   elements.dice.innerHTML = SIDES[state.rolls[0]] + " " + SIDES[state.rolls[1]];
   elements.points.innerText = state.points;
   elements.player1TotalPoints.innerText = state.totalPoints.player1;
@@ -101,6 +110,34 @@ const switchPlayer = function () {
   }
 };
 
+//check for 1s
+const detectBacon = function () {
+  const currentPlayer = state.player;
+  //if both dice are 1
+  //reset pointer points to 0
+  //switch players
+  //else if either dice 1
+  //no points for this turn
+  //switch player,
+  if (state.rolls[0] === 1 && state.rolls[1] === 1) {
+    state.totalPoints[currentPlayer] = 0;
+    state.points = 0;
+    switchPlayer();
+  } else if (state.rolls[0] === 1 || state.rolls[1] === 1) {
+    state.points = 0;
+    switchPlayer();
+  }
+};
+
+//check for winner
+const checkForWinner = function () {
+  if (state.totalPoints.player1 >= 100) {
+    state.winner = "player1";
+  } else if (state.totalPoints.player2 >= 100) {
+    state.winner = "player2";
+  }
+};
+
 //roll 1 dice
 const rollDie = function () {
   //find random num 1-6: rounding up to an int between 1-6
@@ -113,6 +150,9 @@ const rollPair = function () {
   state.rolls = [rollDie(), rollDie()];
   //calc 2 dices total points
   state.points = state.points + (state.rolls[0] + state.rolls[1]);
+
+  detectBacon();
+  checkForWinner();
   //update screen
   render();
 };
