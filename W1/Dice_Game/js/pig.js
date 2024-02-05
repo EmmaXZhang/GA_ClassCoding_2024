@@ -59,7 +59,6 @@ elements.player1Hold.addEventListener("click", function () {
   if (state.winner || state.player !== "player1") {
     return;
   }
-
   hold("player1");
 });
 //player2 hold dice
@@ -69,6 +68,7 @@ elements.player2Hold.addEventListener("click", function () {
   }
   hold("player2");
 });
+
 /*----- functions -----*/
 const init = function () {
   state.winner = false;
