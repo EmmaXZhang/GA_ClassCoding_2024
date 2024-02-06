@@ -6,3 +6,9 @@ const cars = [
   { make: "Toyota", yrsOld: 2, mileage: 41888 },
   { make: "Tesla", yrsOld: 3, mileage: 57720 },
 ];
+
+let wellDrivenCars = cars.filter(function (car) {
+  return car.mileage > 20000;
+});
+
+console.log(wellDrivenCars);
