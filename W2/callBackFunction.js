@@ -7,8 +7,9 @@ const cars = [
   { make: "Tesla", yrsOld: 3, mileage: 57720 },
 ];
 
-let wellDrivenCars = cars.filter(function (car) {
-  return car.mileage > 20000;
-});
+// let wellDrivenCars = cars.filter(function (car) {
+//   return car.mileage > 20000;
+// });
 
-console.log(wellDrivenCars);
+let wellDrivenCars = cars.filter((car) => car.mileage / car.yrsOld > 20000);
+wellDrivenCars.forEach((car) => console.log(car));
