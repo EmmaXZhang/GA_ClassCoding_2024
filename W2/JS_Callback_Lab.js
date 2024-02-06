@@ -126,3 +126,25 @@ step1(function () {
     });
   });
 });
+
+// Write function named countdown that accepts as an arg the starting number of seconds and console.logs the count down to zero one second apart from each other.
+// For example:
+// countdown(3);
+// console.logs something like the following:
+// Count: 3
+// Count: 2
+// Count: 1
+// Count: 0
+
+function countDown(startNum) {
+  let timeId = setInterval(function () {
+    console.log(`Count: ${startNum}`);
+    startNum--;
+    if (startNum < 0) {
+      clearInterval(timeId);
+      return;
+    }
+  }, 1000);
+}
+
+countDown(4);
