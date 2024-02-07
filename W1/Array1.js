@@ -291,4 +291,18 @@ const instructors = ["Alex", "Stephanie", "Daniel"];
 const newInstructors = instructors.map(
   (instructor) => instructor + " is awesome."
 );
-console.log(newInstructors);
+// console.log(newInstructors);
+
+const people = ["jerks", "nice people", "jerks", "nice people", "nice people"];
+const jerks = people.filter((person) => person === "jerks");
+// console.log(jerks);
+
+const cars = [
+  { color: "red", make: "BMW", year: 2001 },
+  { color: "white", make: "Toyota", year: 2013 },
+  { color: "black", make: "Ford", year: 2014 },
+  { color: "white", make: "Tesla", year: 2016 },
+];
+
+const notTooOldCar = cars.find((car) => car.year < 2014);
+console.log(notTooOldCar);
