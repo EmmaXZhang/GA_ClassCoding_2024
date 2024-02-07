@@ -305,4 +305,18 @@ const cars = [
 ];
 
 const notTooOldCar = cars.find((car) => car.year < 2014);
-console.log(notTooOldCar);
+// console.log(notTooOldCar);
+
+//Some method
+const myRoom = ["evil monkey", "bed", "lamp"];
+const isEvilMonkeyInRoom = myRoom.some((item) => item === "evil monkey");
+
+// console.log(isEvilMonkeyInRoom);
+
+//Reduce method
+const votes = ["Yes", "No", "No", "Yes", "Yes"];
+const tally = votes.reduce((acc, vote) => {
+  // Assign 1 if first time seeing a certain "type" of vote, otherwise increase count by 1
+  acc[vote] = acc[vote] ? acc[vote] + 1 : 1;
+  return acc;
+}, {});
