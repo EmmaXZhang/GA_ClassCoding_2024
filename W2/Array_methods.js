@@ -100,7 +100,7 @@ const people = [
 const newPeople = people.map((person) => {
   return person.split(",")[1] + " " + person.split(",")[0];
 });
-console.log(newPeople);
+// console.log(newPeople);
 
 const data = [
   "car",
@@ -122,6 +122,11 @@ const data = [
 // Array.prototype.reduce()
 // 7. Count the number of instances for each of the data items. The reduce should return an object where the keys are 'car', 'truck', etc. and the values are the count.
 // Hint: Since you want to return an object, be sure to pass an empty {} for the initial value of the "accumulator".
+const dataSummary = data.reduce((acc, currentEl) => {
+  acc[currentEl] = acc[currentEl] ? acc[currentEl] + 1 : 1;
+  return acc;
+}, {});
+// console.log(dataSummary);
 
 const devs = [
   { name: "Wes", year: 1988 },
