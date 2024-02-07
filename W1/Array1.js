@@ -283,4 +283,12 @@ function stringsLongerThan(arrOfStrings, num) {
   return newArr;
 }
 
-console.log(stringsLongerThan(["say", "hello", "in", "the", "morning"], 3));
+// console.log(stringsLongerThan(["say", "hello", "in", "the", "morning"], 3));
+
+//Map
+const instructors = ["Alex", "Stephanie", "Daniel"];
+
+const newInstructors = instructors.map(
+  (instructor) => instructor + " is awesome."
+);
+console.log(newInstructors);
