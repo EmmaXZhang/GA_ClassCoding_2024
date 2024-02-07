@@ -45,6 +45,10 @@ const Ada = inventors.find((inventor) => inventor.first === "Ada");
 
 // Array.prototype.reduce()
 // 5. How many years did all the inventors live?
+const totalYears = inventors.reduce((acc, currentEl) => {
+  return acc + (currentEl.passed - currentEl.year);
+}, 0);
+// console.log(totalYears);
 
 const people = [
   "Becker, Carl",
