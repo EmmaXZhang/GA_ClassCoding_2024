@@ -123,10 +123,15 @@ const data = [
 // 7. Count the number of instances for each of the data items. The reduce should return an object where the keys are 'car', 'truck', etc. and the values are the count.
 // Hint: Since you want to return an object, be sure to pass an empty {} for the initial value of the "accumulator".
 const dataSummary = data.reduce((acc, currentEl) => {
-  acc[currentEl] = acc[currentEl] ? acc[currentEl] + 1 : 1;
+  //   acc[currentEl] = acc[currentEl] ? acc[currentEl] + 1 : 1;
+  if (acc[currentEl]) {
+    acc[currentEl]++;
+  } else {
+    acc[currentEl] = 1;
+  }
   return acc;
 }, {});
-// console.log(dataSummary);
+console.log(dataSummary);
 
 const devs = [
   { name: "Wes", year: 1988 },
@@ -139,8 +144,14 @@ const devs = [
 // 8. Check if at least one person is 19 or older?
 // Hint: To get today's year, use the getFullYear method of new Date(), i.e., new Date().getFullYear()
 
+const todayYear = new Date().getFullYear();
+const checkAge = devs.some((dev) => todayYear - dev.year >= 19);
+console.log(checkAge);
+
 // Array.prototype.every()
 // 9. Check if everyone is 19 or older?
+const checkAllAge = devs.every((dev) => todayYear - dev.year >= 19);
+console.log(checkAllAge);
 
 const comments = [
   { text: "Love this!", id: 523423 },
