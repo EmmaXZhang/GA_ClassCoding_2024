@@ -6,7 +6,13 @@ const todos = [
 
 module.exports = {
   getAll,
+  getOne,
 };
+
+function getOne(id) {
+  id = parseInt(id);
+  return todos.find((todo) => todo.id === id);
+}
 
 function getAll() {
   return todos;
