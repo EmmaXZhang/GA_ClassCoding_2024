@@ -15,9 +15,11 @@ server.get("/info", (req, res) => {
   //figure out the stock the user is searching for - req.query.stockCode (after ? is query)
   //GET THE STOCK PRICE
   yahooFinance.quote(req.query.stockCode).then((results) => {
-    console.log(results.regularMarketPrice);
     //render the stock price
-    res.render("info");
+    res.render("info", {
+      price: results.regularMarketPrice,
+      company: results.longName,
+    });
   });
 });
 
