@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock Search</title>
+  </head>
+  <body>
+    <h1>Stock Search</h1>
+    <!-- tell form where the inform go -->
+    <!-- after click search, tell form what is the next action -->
+    <form action="/info">
+      <!-- where user type stuff -->
+      <!-- input is attached to label, so click label can trigger input function -->
+      <label>
+        Stock code:
+        <!-- autofocus: write input immediately without clicking -->
+        <!-- name -> acting as a "key" can be pass to server a "key" -->
+        <input type="search" name="stockCode" placeholder="APPL" autofocus />
+      </label>
+      <button>Search</button>
+    </form>
+  </body>
+</html>
