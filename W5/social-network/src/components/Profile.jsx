@@ -20,6 +20,10 @@ const Profile = ({ name, motto, age, pic }) => {
     setHeight(height - 10);
   };
 
+  const _reset = () => {
+    setHeight(100);
+  };
+
   return (
     <div>
       <h2>{name}</h2>
@@ -29,6 +33,7 @@ const Profile = ({ name, motto, age, pic }) => {
       <div>
         <button onClick={_zoonIn}>+</button>
         <button onClick={_zoonOut}>-</button>
+        <button onClick={_reset}>Rest</button>
       </div>
 
       <p>
