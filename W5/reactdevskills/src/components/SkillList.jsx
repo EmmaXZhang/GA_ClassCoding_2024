@@ -11,5 +11,5 @@ export default function SkillList({ skills }) {
     );
   });
 
-  return <ul>{skillItem}</ul>;
+  return <ul className="padding-0 ">{skillItem}</ul>;
 }
