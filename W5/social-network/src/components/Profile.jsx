@@ -16,6 +16,10 @@ const Profile = ({ name, motto, age, pic }) => {
     setHeight(height + 10);
   };
 
+  const _zoonOut = () => {
+    setHeight(height - 10);
+  };
+
   return (
     <div>
       <h2>{name}</h2>
@@ -24,7 +28,7 @@ const Profile = ({ name, motto, age, pic }) => {
 
       <div>
         <button onClick={_zoonIn}>+</button>
-        <button>-</button>
+        <button onClick={_zoonOut}>-</button>
       </div>
 
       <p>
