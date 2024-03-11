@@ -2,7 +2,8 @@
 //import stuff
 
 //define a functional component
-const Greeting = ({ user }) => {
+const Greeting = (props) => {
+  const { user } = props;
   return <h2>Greetings,{user}</h2>;
 };
 

@@ -1,4 +1,5 @@
 import "./App.css";
+import AddNumber from "./components/AddNumber";
 import Profile from "./components/Profile";
 import Greeting from "./components/Greeting";
 
@@ -8,6 +9,7 @@ function App() {
       <h1>Social Network</h1>
 
       <Greeting user="Bjorn" />
+      <AddNumber num1="5" num2="11" />
       <Profile
         name="Groucho"
         age="44"
