@@ -30,6 +30,9 @@ function App() {
           <option value="😠">Angry</option>
         </select>
       </form>
+      <h1>
+        {formData.name} is {formData.emotion}
+      </h1>
     </div>
   );
 }
