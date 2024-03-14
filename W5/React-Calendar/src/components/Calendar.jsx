@@ -5,19 +5,18 @@ export default function Calendar({ days, dates }) {
   const calendar = [];
   const [cellColor, setCellColor] = useState(Array(28).fill("orange"));
 
-  const [select, setSelect] = useState(null);
-  const [colorSelect, setColorSelect] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState(null);
 
   const colorPicker = ["green", "yellow", "blue", "red"];
+  const categories = ["Holiday", "Work", "Errands", "Sick"];
 
   function handleSelect(index) {
-    setSelect(index); // get color index
-    setColorSelect(colorPicker[index]); //get color selected
+    setSelectedCategory(index);
   }
 
   function handleCellClick(index) {
     const updatedCellColor = [...cellColor];
-    updatedCellColor[index] = colorSelect;
+    updatedCellColor[index] = colorPicker[selectedCategory];
     setCellColor(updatedCellColor);
   }
 
@@ -31,34 +30,19 @@ export default function Calendar({ days, dates }) {
   return (
     <>
       <div className="category">
-        <button
-          className="categoryCell holiday"
-          onClick={() => handleSelect(0)}
-          style={{ border: select === 0 ? "5px solid black" : "none" }}
-        >
-          Holiday
-        </button>
-        <button
-          className="categoryCell work"
-          onClick={() => handleSelect(1)}
-          style={{ border: select === 1 ? "5px solid black" : "none" }}
-        >
-          Work
-        </button>
-        <button
-          className="categoryCell errands"
-          onClick={() => handleSelect(2)}
-          style={{ border: select === 2 ? "5px solid black" : "none" }}
-        >
-          Errands
-        </button>
-        <button
-          className="categoryCell sick"
-          onClick={() => handleSelect(3)}
-          style={{ border: select === 3 ? "5px solid black" : "none" }}
-        >
-          Sick
-        </button>
+        {categories.map((category, index) => (
+          <button
+            key={index}
+            className="categoryCell"
+            onClick={() => handleSelect(index)}
+            style={{
+              backgroundColor: colorPicker[index],
+              border: index === selectedCategory ? "5px solid black" : "none",
+            }}
+          >
+            {category}
+          </button>
+        ))}
       </div>
 
       <div className="calendar">
