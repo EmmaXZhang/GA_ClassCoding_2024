@@ -1,14 +1,20 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
+import Category from "./Category";
 
 export default function Calendar({ days, dates }) {
   const calendar = [];
   const [cellColor, setCellColor] = useState(Array(28).fill("orange"));
 
+  //0-3, pick color index
   const [selectedCategory, setSelectedCategory] = useState(null);
 
-  const colorPicker = ["green", "yellow", "blue", "red"];
-  const categories = ["Holiday", "Work", "Errands", "Sick"];
+  const categoryData = [
+    { name: "Holiday", color: "green" },
+    { name: "Work", color: "yellow" },
+    { name: "Errands", color: "blue" },
+    { name: "Sick", color: "red" },
+  ];
 
   function handleSelect(index) {
     setSelectedCategory(index);
@@ -16,7 +22,7 @@ export default function Calendar({ days, dates }) {
 
   function handleCellClick(index) {
     const updatedCellColor = [...cellColor];
-    updatedCellColor[index] = colorPicker[selectedCategory];
+    updatedCellColor[index] = categoryData[selectedCategory].color;
     setCellColor(updatedCellColor);
   }
 
@@ -29,21 +35,11 @@ export default function Calendar({ days, dates }) {
 
   return (
     <>
-      <div className="category">
-        {categories.map((category, index) => (
-          <button
-            key={index}
-            className="categoryCell"
-            onClick={() => handleSelect(index)}
-            style={{
-              backgroundColor: colorPicker[index],
-              border: index === selectedCategory ? "5px solid black" : "none",
-            }}
-          >
-            {category}
-          </button>
-        ))}
-      </div>
+      <Category
+        categoryData={categoryData}
+        handleSelect={handleSelect}
+        selectedCategory={selectedCategory}
+      />
 
       <div className="calendar">
         {calendar.map((cell, index) => (
