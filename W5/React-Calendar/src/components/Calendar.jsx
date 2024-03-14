@@ -1,15 +1,62 @@
+import { useState } from "react";
 
+export default function Calendar({ days, dates }) {
+  const calendar = [];
 
-export default function Calendar({days,date}){
+  const [select, setSelect] = useState(null);
 
-const calendar=[];
+  function handleSelect(index) {
+    setSelect(index);
+  }
 
-//add days to calendar
-calendar.push(days.map(day=>day.name));
+  for (let i = 0; i < 28; i++) {
+    const date = dates[i];
+    //ensures index within 0 to 6
+    const day = days[i % 7].name;
+    calendar.push({ date, day });
+  }
 
+  return (
+    <>
+      <div className="category">
+        <button
+          className="categoryCell holiday"
+          onClick={() => handleSelect(0)}
+          style={{ border: select === 0 ? "5px solid black" : "none" }}
+        >
+          Holiday
+        </button>
+        <button
+          className="categoryCell work"
+          onClick={() => handleSelect(1)}
+          style={{ border: select === 1 ? "5px solid black" : "none" }}
+        >
+          Work
+        </button>
+        <button
+          className="categoryCell errands"
+          onClick={() => handleSelect(2)}
+          style={{ border: select === 2 ? "5px solid black" : "none" }}
+        >
+          Errands
+        </button>
+        <button
+          className="categoryCell sick"
+          onClick={() => handleSelect(3)}
+          style={{ border: select === 3 ? "5px solid black" : "none" }}
+        >
+          Sick
+        </button>
+      </div>
 
-return(
-
-)
-
+      <div className="calendar">
+        {calendar.map((cell, index) => (
+          <div key={index} className="cell">
+            <p>{cell.day}</p>
+            <p>{cell.date}</p>
+          </div>
+        ))}
+      </div>
+    </>
+  );
 }
