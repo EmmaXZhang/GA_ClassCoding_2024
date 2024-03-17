@@ -31,8 +31,8 @@ export default function NumberWang() {
   return (
     <div>
       <button onClick={_fetchFact}>Number Wang</button>
-      {trivia.map((t) => (
-        <p key={t}>{t}</p>
+      {trivia.map((t, index) => (
+        <p key={index}>{t}</p>
       ))}
     </div>
   );
