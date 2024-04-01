@@ -1,4 +1,4 @@
-import SkillListItem from "../components/SkillListItem";
+import SkillListItem from "./SkillListItem";
 
 export default function SkillList({ skills }) {
   const skillItem = skills.map((skill) => {

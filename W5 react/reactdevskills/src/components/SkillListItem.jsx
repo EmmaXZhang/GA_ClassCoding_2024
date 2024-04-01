@@ -1,4 +1,4 @@
-import "../components/SkillListItem.css";
+import "./SkillListItem.css";
 
 export default function SkillListItem({ skillName, skillLevel }) {
   return (

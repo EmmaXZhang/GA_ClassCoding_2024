@@ -1,4 +1,4 @@
-import "../components/NewSkillForm.css";
+import "./NewSkillForm.css";
 import { useState } from "react";
 
 export default function NewSkillForm({ addToSkills }) {
