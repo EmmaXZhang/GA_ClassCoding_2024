@@ -8,13 +8,27 @@
 # else:
 #     print("the walls are clean")
 
-# input=input('input something: ')
 
-# if input=='green':
-#     print('Go!')
-# elif input=='yellow':
-#     print('slow down')
-# elif input=='red':
-#     print('stop')
-# else: print('bogus')
+color = ""
+while True:
+    color = input('input something: ')
+    if color == 'quit':
+        break
+    if color=='green':
+        print('Go!')
+       
+    elif color=='yellow':
+        print('slow down')
+      
+    elif color=='red':
+        print('stop')
+   
+    else: print('bogus')
 
+
+
+
+# names = ["Tom", "Deborah", "Murray", "Axel"]
+
+# for name in names:
+#     print(name)
