@@ -24,3 +24,15 @@ def largest(list):
 
   return largest
 print(largest([1, 2, 3, 4, 0]))
+
+#ex3
+
+def occurrences(str1,str2):
+  count=0
+  index = str1.find(str2)
+  while index!=-1:
+      count+=1
+      index = str1.find(str2,index+1)
+  return count
+
+print(occurrences('fleep floop', 'e'))
