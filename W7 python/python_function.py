@@ -38,3 +38,11 @@ def occurrences(str1,str2):
 print(occurrences('fleep floop', 'e'))
 
 
+#ex4
+def product(*args):
+  total=1
+  for arg in args:
+    total=total*arg
+  return total
+
+print(product(2, 5, 5))
