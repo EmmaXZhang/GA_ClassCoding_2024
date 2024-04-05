@@ -31,3 +31,20 @@ scores.append({
 
 for dic in scores:
     print(f"{dic['name']} scored {dic['points']} points")
+
+
+def main():
+  run = True
+  while run:
+    menu()
+    selection = int(input('Enter a selection: '))
+
+    match selection:
+      case 1: contacts.show_contacts(addressbook)
+      case 2: contacts.add_contact(addressbook)
+      case 3: contacts.delete_contact(addressbook)
+      case 4: run = False
+      case _: print('\nThat selection is not valid, please try again!\n')
+
+  print('\nGoodbye!\n')
+main()
