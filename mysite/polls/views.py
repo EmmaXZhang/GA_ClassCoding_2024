@@ -1,21 +1,24 @@
 # from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Question
+from django.shortcuts import render,get_list_or_404
+from django.http import Http404
 
 # Create your views here.
 def index(request):
     #interact with model
-    #send back a response
-
     # latest 5 poll questions
     latest_question_list = Question.objects.order_by("-pub_date")[:5]
-    output =",".join([q.question_text for q in latest_question_list])
+    #send back a response via template
+    context = {"latest_question_list": latest_question_list}
+    return render(request,"polls/index.html",context)
 
-    return HttpResponse(output)
 
 
 def detail(request,question_id):
-    return HttpResponse("You're looking at question %s." % question_id)
+    question = get_list_or_404(Question,pk=question_id)
+    return render(request, "polls/detail.html",{"question":question})
+    
 
 def results(request,question_id):
     response = "you're looking at the results of question %s"

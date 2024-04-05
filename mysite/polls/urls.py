@@ -7,6 +7,8 @@ from . import views
 # http://localhost:8000/polls/
 # the link is called "index"
 
+app_name = "polls"
+
 urlpatterns =[
     # localhost:8000/polls/  -> define on entire url file
     path("",views.index, name="index"),
