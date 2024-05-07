@@ -8,6 +8,7 @@ export default function Player() {
   function handleClick() {
     // access to input element, build-in input element (value, method) is stored in playerName.current
     setPlayerName(playerName.current.value);
+    playerName.current.value = "";
   }
 
   return (
