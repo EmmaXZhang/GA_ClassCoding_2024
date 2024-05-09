@@ -31,7 +31,12 @@ export default function NewProject({ onAdd }) {
 
   return (
     <>
-      <Modal ref={modal} />
+      <Modal ref={modal} buttonCaption="OK">
+        <h2 className="text-xl font-bold text-stone-500 mt-4 my-4">
+          Invalid input
+        </h2>
+        <p>Please make sure you porvide a valid inpur value</p>
+      </Modal>
       <div className="w-[35rem] mt-16 ">
         <menu className="flex items-center justify-end gap-4 my-4">
           <li>
