@@ -1,4 +1,7 @@
 import { createContext } from "react";
 
 //an object to contain react component
-const CartContext = createContext();
+export const CartContext = createContext({
+  items: [],
+  addItemToCart: () => {},
+});
