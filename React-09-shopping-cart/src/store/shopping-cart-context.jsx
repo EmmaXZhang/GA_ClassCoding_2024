@@ -74,7 +74,7 @@ function shoppingCartReducer(state, action) {
 
 export default function CartContextProvider({ children }) {
   // useReducer(reducerFunction,initial state)
-  // shopppingCartState -> first state return by useReducer
+  // shopppingCartState -> first state return by useReducer..
   const [shoppingCartState, shoppingCartDispatch] = useReducer(
     shoppingCartReducer,
     {
